@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: details
-        image: istio/examples-bookinfo-details-v1:v2
+        image: openpolicyagent/demo-bookinfo-details-v1:v2
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9080
@@ -63,7 +63,7 @@ spec:
     spec:
       containers:
       - name: ratings
-        image: istio/examples-bookinfo-ratings-v1:v2
+        image: openpolicyagent/demo-bookinfo-ratings-v1:v2
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9080
@@ -98,7 +98,7 @@ spec:
     spec:
       containers:
       - name: reviews
-        image: istio/examples-bookinfo-reviews-v2:v2
+        image: openpolicyagent/demo-bookinfo-reviews-v2:v2
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9080
@@ -134,7 +134,7 @@ spec:
     spec:
       containers:
       - name: productpage
-        image: istio/examples-bookinfo-productpage-v1:v2
+        image: openpolicyagent/demo-bookinfo-productpage-v1:v2
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9080

@@ -21,11 +21,11 @@ VERSION="v2"
 SCRIPTDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 pushd $SCRIPTDIR/productpage-dev
-  docker build -t istio/examples-bookinfo-productpage-v1:${VERSION} .
+  docker build -t openpolicyagent/demo-bookinfo-productpage-v1:${VERSION} .
 popd
 
 pushd $SCRIPTDIR/details
-  docker build -t istio/examples-bookinfo-details-v1:${VERSION} .
+  docker build -t openpolicyagent/demo-bookinfo-details-v1:${VERSION} .
 popd
 
 pushd $SCRIPTDIR/reviews
@@ -33,19 +33,19 @@ pushd $SCRIPTDIR/reviews
   docker run --rm -u root -v `pwd`:/usr/bin/app:rw -w /usr/bin/app gradle:4.8.1 gradle clean build
   pushd reviews-wlpcfg
     #with ratings black stars
-    docker build -t istio/examples-bookinfo-reviews-v2:${VERSION} --build-arg service_version=v2 --build-arg enable_ratings=true .
+    docker build -t openpolicyagent/demo-bookinfo-reviews-v2:${VERSION} --build-arg service_version=v2 --build-arg enable_ratings=true .
   popd
 popd
 
 pushd $SCRIPTDIR/ratings
-  docker build -t istio/examples-bookinfo-ratings-v1:${VERSION} --build-arg service_version=v1 .
-  docker build -t istio/examples-bookinfo-ratings-v2:${VERSION} --build-arg service_version=v2 .
+  docker build -t openpolicyagent/demo-bookinfo-ratings-v1:${VERSION} --build-arg service_version=v1 .
+  docker build -t openpolicyagent/demo-bookinfo-ratings-v2:${VERSION} --build-arg service_version=v2 .
 popd
 
 pushd $SCRIPTDIR/mysql
-  docker build -t istio/examples-bookinfo-mysqldb:${VERSION} .
+  docker build -t openpolicyagent/demo-bookinfo-mysqldb:${VERSION} .
 popd
 
 pushd $SCRIPTDIR/mongodb
-  docker build -t istio/examples-bookinfo-mongodb:${VERSION} .
+  docker build -t openpolicyagent/demo-bookinfo-mongodb:${VERSION} .
 popd
