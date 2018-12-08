@@ -26,6 +26,8 @@ eval $(minikube docker-env)
 
 ### Step 3: Build the images for the Demo App to be deployed in the `prod` namespace
 
+> The below images can also be pulled from Docker Hub.
+
 ```bash
 make images-prod
 ```
@@ -33,16 +35,18 @@ make images-prod
 Below images should be created:
 
 ```bash
-istio/examples-bookinfo-mongodb:v1
-istio/examples-bookinfo-mysqldb:v1
-istio/examples-bookinfo-ratings-v1:v1
-istio/examples-bookinfo-ratings-v2:v1
-istio/examples-bookinfo-reviews-v2:v1
-istio/examples-bookinfo-details-v1:v1
-istio/examples-bookinfo-productpage-v1:v1
+openpolicyagent/demo-bookinfo-mongodb:v1
+openpolicyagent/demo-bookinfo-mysqldb:v1
+openpolicyagent/demo-bookinfo-ratings-v1:v1
+openpolicyagent/demo-bookinfo-ratings-v2:v1
+openpolicyagent/demo-bookinfo-reviews-v2:v1
+openpolicyagent/demo-bookinfo-details-v1:v1
+openpolicyagent/demo-bookinfo-productpage-v1:v1
 ```
 
 ### Step 4: Build the images for the Alice's version of the Demo App to be deployed in the `dev` namespace
+
+> The below images can also be pulled from Docker Hub.
 
 ```bash
 make images-dev
@@ -51,13 +55,13 @@ make images-dev
 Below images should be created:
 
 ```bash
-istio/examples-bookinfo-mongodb:v2
-istio/examples-bookinfo-mysqldb:v2
-istio/examples-bookinfo-ratings-v1:v2
-istio/examples-bookinfo-ratings-v2:v2
-istio/examples-bookinfo-reviews-v2:v2
-istio/examples-bookinfo-details-v1:v2
-istio/examples-bookinfo-productpage-v1:v2
+openpolicyagent/demo-bookinfo-mongodb:v2
+openpolicyagent/demo-bookinfo-mysqldb:v2
+openpolicyagent/demo-bookinfo-ratings-v1:v2
+openpolicyagent/demo-bookinfo-ratings-v2:v2
+openpolicyagent/demo-bookinfo-reviews-v2:v2
+openpolicyagent/demo-bookinfo-details-v1:v2
+openpolicyagent/demo-bookinfo-productpage-v1:v2
 ```
 
 ### Step 5: Create `prod` and `dev` namespaces
